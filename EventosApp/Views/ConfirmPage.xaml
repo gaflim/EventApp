@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventosApp.Views.ConfirmPage">
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="10" Margin="10" VerticalOptions="Center" HorizontalOptions="Fill" Spacing="18">
+            
+            <Label Text="Verifique os dados" FontSize="25" Margin="0, 5" TextColor="{AppThemeBinding Light=MediumPurple, Dark=Azure}"/>
+            
+            <Frame>
+                <VerticalStackLayout>
+                    <Grid RowDefinitions="*, *, *, *" ColumnDefinitions="*, *" RowSpacing="8" ColumnSpacing="15">
+                        <Frame Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="MediumSlateBlue" Height="30">
+                            <Label Text="{Binding EventName}" FontSize="20" TextColor="Azure" />
+                        </Frame>
+                        
+                        <Label Grid.Row="1" Grid.Column="0" Text="Início do evento" Style="{StaticResource H4}" />
+                        <Frame Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0" Height="30">
+                            <Label Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}" Style="{StaticResource H4}" />
+                        </Frame>
+                        
+                        <Label Grid.Row="2" Grid.Column="0" Text="Fim do evento" Style="{StaticResource H4}" />
+                        <Frame Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Margin="5,0" Height="30">
+                            <Label Text="{Binding DataFim, StringFormat='{}{0:dd/MM/yyyy}'}" Style="{StaticResource H4}" />
+                        </Frame>
+                    
+                        <Frame Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="MediumSlateBlue" HorizontalOptions="Center" Height="30">
+                            <Label Text="{Binding Total, StringFormat='{}{0:c}'}" TextColor="Azure" />
+                        </Frame>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+            <Button Text="Concluir" Clicked="Finalizar" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

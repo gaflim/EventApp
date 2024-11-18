@@ -1,0 +1,29 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EventosApp"
+             x:Class="EventosApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <Style TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            
+            <Style x:Key="H2" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#151515, Dark=#cccccc}" />
+                <Setter Property="Margin" Value="0, 10, 0, 0" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="H4" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#151515, Dark=#cccccc}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
